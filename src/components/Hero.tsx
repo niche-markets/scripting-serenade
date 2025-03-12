@@ -3,13 +3,19 @@ import { useAnimationOnScroll } from "@/hooks/useAnimationOnScroll";
 import { ArrowDown } from "lucide-react";
 
 export function Hero() {
-  const headingRef = useAnimationOnScroll();
-  const subtitleRef = useAnimationOnScroll({
+  const headingRef = useAnimationOnScroll<HTMLHeadingElement>({
     threshold: 0.1,
     triggerOnce: true,
     rootMargin: '0px 0px 0px 0px'
   });
-  const ctaRef = useAnimationOnScroll({
+  
+  const subtitleRef = useAnimationOnScroll<HTMLParagraphElement>({
+    threshold: 0.1,
+    triggerOnce: true,
+    rootMargin: '0px 0px 0px 0px'
+  });
+  
+  const ctaRef = useAnimationOnScroll<HTMLDivElement>({
     threshold: 0.1,
     triggerOnce: true,
     rootMargin: '0px 0px 0px 0px'

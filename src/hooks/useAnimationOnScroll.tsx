@@ -1,14 +1,14 @@
 
 import { useEffect, useRef } from 'react';
 
-export function useAnimationOnScroll(
+export function useAnimationOnScroll<T extends HTMLElement = HTMLElement>(
   options = { 
     threshold: 0.1, 
     rootMargin: '0px 0px -10% 0px',
     triggerOnce: true 
   }
 ) {
-  const ref = useRef<HTMLElement>(null);
+  const ref = useRef<T>(null);
 
   useEffect(() => {
     const currentRef = ref.current;
